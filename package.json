@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
 "scripts": {
+  "start": "node server.js",
   "test": "jest --detectOpenHandles --forceExit",
-  "lint": "eslint taskService.js --fix || true",
+  "lint": "eslint taskService.js server.js --fix || true",
   "build": "echo 'Building production bundle... Application ready.'"
 },
   "keywords": [],
