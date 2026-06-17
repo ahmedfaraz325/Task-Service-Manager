@@ -1,0 +1,33 @@
+name: Node.js CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js Environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm' # Pipeline optimization via dependency caching
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Linter (Lint)
+      run: npm run lint
+
+    - name: Run Unit Tests (Test)
+      run: npm run test
+
+    - name: Compile Application (Build)
+      run: npm run build
