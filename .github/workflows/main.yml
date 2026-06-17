@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # Upgraded to v4 for faster code checkout
 
     - name: Setup Node.js Environment
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4 # Upgraded to v4 for robust caching and runner stability
       with:
-        node-version: '18'
+        node-version: '20' # Switched to latest stable Long-Term Support (LTS) version
         cache: 'npm' # Pipeline optimization via dependency caching
 
     - name: Install Dependencies

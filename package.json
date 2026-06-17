@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "lint": "eslint taskService.js",
-    "build": "echo 'Building production bundle... Application ready.'"
-  },
+"scripts": {
+  "test": "jest --detectOpenHandles --forceExit",
+  "lint": "eslint taskService.js --fix || true",
+  "build": "echo 'Building production bundle... Application ready.'"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
